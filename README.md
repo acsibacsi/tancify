@@ -20,4 +20,3 @@ Tanulas segito webalkalmazas, ami a targyak elvegzeset segiti, a tananyag beoszt
     * szemelyre szabas
 
 * orarend
-
