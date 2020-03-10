@@ -35,3 +35,7 @@ Tanulas segito webalkalmazas, ami a targyak elvegzeset segiti, a tananyag beoszt
 * megbizhatóság
 * hordozhatóság
 * hatékonyság
+
+## Adatbazis
+
+<img src="https://github.com/acsibacsi/tancify.git/raw/master/docs/uml/database_uml.png" alt="database_uml" width="200">
