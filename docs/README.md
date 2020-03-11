@@ -45,5 +45,5 @@ Tanulas segito webalkalmazas, ami a targyak elvegzeset segiti, a tananyag beoszt
 ## Szekvenciadiagram
 
 <h2 align="center">
-<img src="img/login_sequence.png" alt="login_sequence" width="664">
+<img src="img/login_sequence.PNG" alt="login_sequence" width="664">
 </h2>
