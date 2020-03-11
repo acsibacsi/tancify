@@ -39,5 +39,11 @@ Tanulas segito webalkalmazas, ami a targyak elvegzeset segiti, a tananyag beoszt
 ## Adatbazis
 
 <h2 align="center">
-<img src="uml/database_uml.png" alt="database_uml" width="661">
+<img src="img/database_uml.png" alt="database_uml" width="661">
+</h2>
+
+## Szekvenciadiagram
+
+<h2 align="center">
+<img src="img/login_sequence.png" alt="login_sequence" width="664">
 </h2>
