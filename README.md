@@ -35,9 +35,3 @@ Tanulas segito webalkalmazas, ami a targyak elvegzeset segiti, a tananyag beoszt
 * megbizhatóság
 * hordozhatóság
 * hatékonyság
-
-## Adatbazis
-
-<h2 align="center">
-<img src="uml/database_uml.png" alt="database_uml" width="661">
-</h2>
