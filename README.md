@@ -34,6 +34,7 @@ Tanulas segito webalkalmazas, ami a targyak elvegzeset segiti, a tananyag beoszt
 * használhatóság
 * megbizhatóság
 * hordozhatóság
+<<<<<<< HEAD:docs/README.md
 * hatékonyság
 
 ## Adatbazis
@@ -47,3 +48,6 @@ Tanulas segito webalkalmazas, ami a targyak elvegzeset segiti, a tananyag beoszt
 <h2 align="center">
 <img src="img/login_sequence.PNG" alt="login_sequence" width="664">
 </h2>
+=======
+* hatékonyság
+>>>>>>> runtest:README.md
