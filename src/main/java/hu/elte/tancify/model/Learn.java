@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class Learn extends BaseEntity{
+public class Learn extends BaseEntity {
+
 /* * /
     @Column(name = "user_id", nullable=false)
     private long userID;
@@ -19,6 +20,7 @@ public class Learn extends BaseEntity{
     @Column(name = "flashcard_id", nullable=false)
     private long flashcardID;
 /* */
+
     @JoinColumn
     @ManyToOne(targetEntity = User.class)
     private User user;

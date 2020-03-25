@@ -25,6 +25,7 @@ public class Flashcard extends BaseEntity {
     @JoinColumn
     @ManyToOne(targetEntity = Subject.class)
     private Subject subject;
+
 /* * /    
     @Column(name = "subjct_id", nullable=false)
     private long subjectID;
