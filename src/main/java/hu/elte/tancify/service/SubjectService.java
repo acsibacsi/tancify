@@ -1,7 +1,7 @@
 package hu.elte.tancify.repository.service;
 
-import hello.model.Subject;
-import hello.repository.SubjectRepository;
+import hu.elte.tancify.model.Subject;
+import hu.elte.tancify.repository.SubjectRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
