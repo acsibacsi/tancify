@@ -1,6 +1,6 @@
 # Tancify
 
-Tanulas segito webalkalmazas, ami a targyak elvegzeset segiti, a tananyag beosztasaval, flashcardokkal valo elsajatitasaval es allando szamonkeresekkel. Heti osszesiteseket kuld, amivel emlekezteti a regisztralt felhasznalot elorehaladasarol.
+Tanulás segítő webalkalmazas, ami a tárgyak elvégzesét segíti, a tananyag beosztásával, flashcardokkal való elsajátításával és állandó számonkérésekkel. Heti összesítéseket küld, amivel emlekezteti a regisztrált felhasználót előrehaladásáról.
 
 ## Funkcionális követelmények
 
@@ -10,14 +10,15 @@ Tanulas segito webalkalmazas, ami a targyak elvegzeset segiti, a tananyag beoszt
 
     * szerkesztés
 
-        * tananyag beosztasa
-        * optimalis menetrend kiszamitasa
+        * tananyag beosztása
+        * optimális menetrend kiszamítása
 
-    * szemelyre szabas
+    * személyre szabás
     * lekérdezés
-    * emlekezteto funkcio
+    * emlékeztető funkció
 
-        * valaszthato funkciok
+        * választható funkciók
+
 * tantárgyak
 
     * új létrehozás
@@ -25,7 +26,7 @@ Tanulas segito webalkalmazas, ami a targyak elvegzeset segiti, a tananyag beoszt
 
         * tanulas
         * teszt
-        * hozzaadas / szerkesztes
+        * hozzáadás / szerkesztés
 
     * teszt kitöltés
 
