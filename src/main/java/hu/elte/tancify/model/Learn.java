@@ -1,4 +1,4 @@
-package hu.elte.tancify;
+package hu.elte.tancify.model;
 
 import javax.persistence.*;
 import lombok.Data;
@@ -10,6 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Learn {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
     @Column(name = "user_id", nullable=false)
     private long userID;

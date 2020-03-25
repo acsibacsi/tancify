@@ -1,4 +1,4 @@
-package hu.elte.tancify;
+package hu.elte.tancify.model;
 
 import java.util.Date;
 
@@ -12,6 +12,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Test {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
     @Column(name = "user_id", nullable=false)
     private long userID;

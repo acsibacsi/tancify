@@ -1,4 +1,4 @@
-package hu.elte.tancify;
+package hu.elte.tancify.model;
 
 import javax.persistence.*;
 import lombok.Data;
@@ -9,18 +9,21 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Subject {
+public class User {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(nullable=false, length=200, unique = true)
+    @Column(nullable=false, length=100, unique = true)
+    private String email;
+    
+    @Column(nullable=false, length=100)
     private String name;
     
-    @Column(name="public", nullable=false, length=100)
-    private boolean isPublic;
-    
     @Column(nullable=false, length=100, unique = true)
-    private String owner;
+    private String username;
+    
+    @Column(nullable=false, length=100)
+    private String password;
 }

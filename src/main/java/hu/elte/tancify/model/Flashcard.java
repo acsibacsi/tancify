@@ -1,4 +1,4 @@
-package hu.elte.tancify;
+package hu.elte.tancify.model;
 
 import javax.persistence.*;
 import lombok.Data;
