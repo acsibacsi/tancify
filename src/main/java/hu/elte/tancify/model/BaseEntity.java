@@ -1,12 +1,9 @@
-package hu.elte.tancify;
+package hu.elte.tancify.model;
 
 import lombok.Data;
 
 import javax.persistence.*;
 
-/**
- * @author Ágoston Tamás <a.tamas7@gmail.com>
- */
 @Data
 @MappedSuperclass
 public class BaseEntity {

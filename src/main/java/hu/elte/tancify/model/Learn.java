@@ -1,6 +1,4 @@
-package hu.elte.tancify;
-
-import java.util.Date;
+package hu.elte.tancify.model;
 
 import javax.persistence.*;
 import lombok.Data;
@@ -8,32 +6,27 @@ import lombok.EqualsAndHashCode;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-/**
- * @author Ágoston Tamás <a.tamas7@gmail.com>
- */
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class Test extends BaseEntity {
-
-/*  * /
+public class Learn extends BaseEntity{
+/* * /
     @Column(name = "user_id", nullable=false)
     private long userID;
 
-    @Column(name = "subject_id", nullable=false)
-    private long subjectID;
+    @Column(name = "flashcard_id", nullable=false)
+    private long flashcardID;
 /* */
-
     @JoinColumn
     @ManyToOne(targetEntity = User.class)
     private User user;
 
     @JoinColumn
-    @ManyToOne(targetEntity = Subject.class)
-    private Subject subject;
+    @ManyToOne(targetEntity = Flashcard.class)
+    private Flashcard flashcard;
 
-    @Column(nullable=false)
-    private Date date;
+    @Column(name = "learned", nullable=false)
+    private boolean isLearned;
 }

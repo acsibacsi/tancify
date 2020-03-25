@@ -1,4 +1,4 @@
-package hu.elte.tancify;
+package hu.elte.tancify.model;
 
 import javax.persistence.*;
 import lombok.Data;
@@ -6,9 +6,6 @@ import lombok.EqualsAndHashCode;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-/**
- * @author Ágoston Tamás <a.tamas7@gmail.com>
- */
 @Entity
 @Data
 @NoArgsConstructor
