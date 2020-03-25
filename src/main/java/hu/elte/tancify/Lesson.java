@@ -4,18 +4,19 @@ import java.util.Date;
 
 import javax.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+/**
+ * @author Ágoston Tamás <a.tamas7@gmail.com>
+ */
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Lesson {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+@EqualsAndHashCode(callSuper = true)
+public class Lesson  extends BaseEntity {
 
     @Column(name = "user_id", nullable=false)
     private long userID;
