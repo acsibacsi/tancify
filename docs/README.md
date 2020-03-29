@@ -62,12 +62,12 @@ Tanulás segítő webalkalmazas, ami a tárgyak elvégzesét segíti, a tananyag
     GET tancify/my_subjects/history: querying an element (a subject) with history identifier from model my_subjects
     GET tancify/my_subjects/history/lesson_1: querying an element (a lesson) with lesson_1 identifier from model 
         lessons of history subject
-    GET tancify/my_subjects/history/test_1: querying an element (a lesson) with test_1 identifier from model lessons
-         of history subject
+    GET tancify/my_subjects/history/test_1: querying an element (a lesson) with test_1 identifier from model
+        lessons of history subject
     GET tancify/my_subjects/history/all_lessons_questions: querying an element with all_lessons_questions identifier
          from model lessons of history subject
-    GET tancify/my_subjects/history/all_tests_questions: querying an element with all_tests_questions identifier from
-         model lessons of history subject
+    GET tancify/my_subjects/history/all_tests_questions: querying an element with all_tests_questions identifier
+        from model lessons of history subject
     POST tancify/my_subject: Inserting new element (new lesson or test) into my_subjects model
     PUT tancify/my_subjects/history: Updating element with history identifier in model my_subjects
     PATCH tancify/my_subjects/history: Partially updating element with history identifier in model my_subjects 
@@ -77,23 +77,24 @@ Tanulás segítő webalkalmazas, ami a tárgyak elvégzesét segíti, a tananyag
     DELETE tancify/all_subjects/history: Deleting element with history identifier from model people
 
     GET tancify/all_subjects: querying all_subjects
-    GET tancify/all_subjects/history: querying an element (a subject) with history identifier from model all_subjects
-	GET tancify/all_subjects/history/lesson_1: querying an element (a lesson) with lesson_1 identifier from model lessons
-         of history subject
-    GET tancify/all_subjects/history/test_1: querying an element (a lesson) with test_1 identifier from model lessons of
-         history subject
-    GET tancify/all_subjects/history/all_lessons_questions: querying an element with all_lessons_questions identifier from
-         model lessons of history subject
-    GET tancify/all_subjects/history/all_tests_questions: querying an element with all_tests_questions identifier from model
-         lessons of history subject
+    GET tancify/all_subjects/history: querying an element (a subject) with history identifier from model 
+        all_subjects
+	GET tancify/all_subjects/history/lesson_1: querying an element (a lesson) with lesson_1 identifier from model
+        lessons of history subject
+    GET tancify/all_subjects/history/test_1: querying an element (a lesson) with test_1 identifier from model 
+        lessons of history subject
+    GET tancify/all_subjects/history/all_lessons_questions: querying an element with all_lessons_questions 
+        identifier from model lessons of history subject
+    GET tancify/all_subjects/history/all_tests_questions: querying an element with all_tests_questions identifier 
+        from model lessons of history subject
     POST tancify/all_subjects: Inserting new element into all_subjects model
     PUT tancify/all_subjects/history: Updating element with history identifier in model all_subjects
     PATCH tancify/all_subjects/history: Partially updating element with history identifier in model all_subjects
          (e.g add new lesson or test)
 	POST tancify/all_subjects/history/lesson_1: Inserting new element into history model
     PUT tancify/all_subjects/history/lesson_1: Updating element with lesson_1 identifier in model history
-    PATCH tancify/all_subjects/history/lesson_1: Partially updating element with lesson_1 identifier in model history
-         (e.g add new question-answer to flashcards or tests)
+    PATCH tancify/all_subjects/history/lesson_1: Partially updating element with lesson_1 identifier in model
+        history (e.g add new question-answer to flashcards or tests)
     DELETE tancify/all_subjects/history: Deleting element with history identifier from model /all_subjects
 
     GET tancify/timetable: querying timetable
