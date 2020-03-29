@@ -51,6 +51,10 @@ Tanulás segítő webalkalmazas, ami a tárgyak elvégzesét segíti, a tananyag
 
 ## Vegpont tervek 
 
+<h2 align="center">
+<img src="img/endpoints.png" alt="login_sequence" width="664">
+</h2>
+
     GET tancify: querying tancify (you can sign in here and click on registration)
     GET tancify/registration: querying registration (yuo need to add your: name, user_name, email, password) 
 
