@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn clean install'
+        sh 'mvn clean install -e'
       }
     }
 
@@ -21,7 +21,9 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'mvn deploy'
+        sh 'su'
+        sh 'yum install at'
+        sh 'echo "mvn spring-boot:run" | at now'
       }
     }
 
