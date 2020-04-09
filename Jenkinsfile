@@ -21,7 +21,8 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'mvn spring-boot:run'
+        sh 'cat /etc/*-release'
+        sh 'echo "mvn spring-boot:run" | at now'
       }
     }
 
