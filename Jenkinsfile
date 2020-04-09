@@ -21,7 +21,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'yum install at'
+        sh 'sudo yum install at'
         sh 'echo "mvn spring-boot:run" | at now'
       }
     }
