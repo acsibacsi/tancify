@@ -2,6 +2,7 @@ pipeline {
   agent {
     docker {
       image 'maven'
+      args '-p 8005:8080'
     }
 
   }
