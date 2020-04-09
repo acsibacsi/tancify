@@ -21,8 +21,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'apt-get install at'
-        sh 'echo "mvn spring-boot:run" | at now'
+        sh 'mvn spring-boot:run'
       }
     }
 
