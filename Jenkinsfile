@@ -6,9 +6,9 @@ pipeline {
 
   }
   stages {
-    stage('Test') {
+    stage('Build') {
       steps {
-        sh 'make run_test'
+        sh 'mvn install'
       }
     }
 
