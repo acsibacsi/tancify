@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        sh 'echo ${POM_VERSION}'
         sh 'mvn clean install'
+        sh 'echo ${BUILD_NUMBER}'
       }
     }
 
