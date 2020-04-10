@@ -9,7 +9,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'echo "java -jar /var/jenkins_home/workspace/tancify_master/target/tancify-0.1.0-SNAPSHOT.jar" | at now'
+        sh 'echo "java -jar target/tancify-0.1.0-SNAPSHOT.jar" | at now'
       }
     }
 
