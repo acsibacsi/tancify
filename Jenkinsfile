@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       when {
-          branch 'master'
+        branch 'master'
       }
       steps {
         sh 'mvn clean install'
@@ -12,14 +12,16 @@ pipeline {
 
     stage('Deploy') {
       when {
-          branch 'master'
+        branch 'master'
       }
       steps {
-        script{
-            withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
-                sh 'nohup java -jar target/$IMAGE-$VERSION.jar &'
-            }
+        sh 'pkill -fc java\\ \\-jar\\ target/.*'
+        script {
+          withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
+            sh 'nohup java -jar target/$IMAGE-$VERSION.jar &'
+          }
         }
+
       }
     }
 
