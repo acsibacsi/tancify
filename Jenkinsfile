@@ -13,7 +13,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'java -jar target/tancify-0.1.0-SNAPSHOT.jar'
+        sh 'echo "java -jar target/tancify-0.1.0-SNAPSHOT.jar" | at now'
       }
     }
 
