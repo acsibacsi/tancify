@@ -9,7 +9,11 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'echo "java -jar target/$IMAGE-$VERSION.jar" | at now'
+        script{
+            withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
+                sh 'nohup java -jar target/$IMAGE-$VERSION.jar &'
+            }
+        }
       }
     }
 
