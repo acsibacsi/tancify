@@ -8,6 +8,8 @@ pipeline {
             args '-u root -v /var/jenkins_home/workspace/tancify_master:/var/jenkins_home/workspace/tancify_master'
           }
         }
+
+      }
       steps {
         sh 'mvn clean install'
       }
