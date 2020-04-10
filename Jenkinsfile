@@ -5,7 +5,7 @@ pipeline {
         agent {
           docker {
             image 'maven'
-            args '-p 8006:8080 -u root -v $HOME/workspace/tancify_master/:/var/jenkins_home/workspace/tancify_master'
+            args '-p 8006:8080'
           }
         }
       steps {
@@ -17,7 +17,7 @@ pipeline {
         agent {
           docker {
               image 'ubuntu'
-              args '-u root:sudo -v $HOME/workspace/tancify_master/:/var/jenkins_home/workspace/tancify_master'
+              args '-u root:sudo'
           }
       }
       steps {
