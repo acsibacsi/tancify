@@ -1,11 +1,5 @@
 pipeline {
   agent any
-
-  environment {
-    IMAGE = readMavenPom().getArtifactId()
-    VERSION = readMavenPom().getVersion()
-  }
-
   stages {
     stage('Build') {
       steps {
@@ -15,7 +9,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'java -jar target/$IMAGE-$VERSION.jar '
+        sh 'echo "java -jar target/$IMAGE-$VERSION.jar" | at now'
       }
     }
 
@@ -23,5 +17,9 @@ pipeline {
   tools {
     maven 'Maven 3.3.9'
     jdk 'jdk8'
+  }
+  environment {
+    IMAGE = readMavenPom().getArtifactId()
+    VERSION = readMavenPom().getVersion()
   }
 }
