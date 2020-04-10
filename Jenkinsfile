@@ -2,12 +2,19 @@ pipeline {
   agent any
   stages {
     stage('Build') {
+      when {
+          branch 'master'
+          branch 'release'
+      }
       steps {
         sh 'mvn clean install'
       }
     }
 
     stage('Deploy') {
+      when {
+          branch 'master'
+      }
       steps {
         script{
             withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
