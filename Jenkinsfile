@@ -5,7 +5,7 @@ pipeline {
         agent {
           docker {
             image 'maven'
-            args '-p 8006:8080'
+            args '-p 8006:8080 -v $HOME/workspace/tancify_master/:/var/jenkins_home/workspace/tancify_master'
           }
         }
       steps {
@@ -14,7 +14,12 @@ pipeline {
     }
 
     stage('Deploy') {
-      agent any
+        agent {
+          docker {
+              image 'ubuntu'
+              args '-u root:sudo -v $HOME/workspace/tancify_master/:/var/jenkins_home/workspace/tancify_master'
+          }
+      }
       steps {
         sh 'apt-get install at'
         sh 'echo "java -jar /var/jenkins_home/workspace/tancify_master/target/tancify-0.1.0-SNAPSHOT.jar" | at now'
