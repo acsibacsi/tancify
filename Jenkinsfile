@@ -9,11 +9,12 @@ pipeline {
           }
         }
       steps {
-        sh 'mvn clean install -e'
+        sh 'mvn clean install'
       }
     }
 
     stage('Deploy') {
+      agent none
       steps {
         sh 'apt-get install at'
         sh 'echo "mvn spring-boot:run" | at now'
