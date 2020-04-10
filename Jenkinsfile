@@ -1,27 +1,21 @@
 pipeline {
-  agent {
-    docker {
-      image 'maven'
-      args '-p 8006:8080'
-    }
-
-  }
+  agent none
   stages {
     stage('Build') {
+        agent {
+          docker {
+            image 'maven'
+            args '-p 8006:8080'
+          }
+        }
       steps {
         sh 'mvn clean install -e'
       }
     }
 
-    stage('Test') {
-      steps {
-        sh 'mvn test'
-      }
-    }
-
     stage('Deploy') {
       steps {
-        sh 'yum install at'
+        sh 'apt-get install at'
         sh 'echo "mvn spring-boot:run" | at now'
       }
     }
