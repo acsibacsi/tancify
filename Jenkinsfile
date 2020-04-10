@@ -4,7 +4,6 @@ pipeline {
     stage('Build') {
       when {
           branch 'master'
-          branch 'release'
       }
       steps {
         sh 'mvn clean install'
