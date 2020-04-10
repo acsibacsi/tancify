@@ -9,15 +9,13 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'echo $IMAGE'
-        sh 'echo $VERSION'
         sh 'mvn clean install'
       }
     }
 
     stage('Deploy') {
       steps {
-        sh 'mvn spring-boot:run'
+        sh 'java -jar target/$IMAGE-$VERSION.jar '
       }
     }
 
