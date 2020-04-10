@@ -9,10 +9,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh '''# echo "java -jar target/tancify-0.1.0-SNAPSHOT.jar" | at now
-
-'''
-        sh 'java -jar target/tancify-0.1.0-SNAPSHOT.jar'
+        sh 'mvn spring-boot:run'
       }
     }
 
