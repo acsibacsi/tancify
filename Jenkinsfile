@@ -1,8 +1,16 @@
 pipeline {
   agent any
+
+  environment {
+    IMAGE = readMavenPom().getArtifactId()
+    VERSION = readMavenPom().getVersion()
+  }
+
   stages {
     stage('Build') {
       steps {
+        sh 'echo $IMAGE'
+        sh 'echo $VERSION'
         sh 'mvn clean install'
       }
     }
