@@ -14,10 +14,10 @@ pipeline {
     }
 
     stage('Deploy') {
-      agent none
+      agent any
       steps {
         sh 'apt-get install at'
-        sh 'echo "mvn spring-boot:run" | at now'
+        sh 'echo "java -jar /var/jenkins_home/workspace/tancify_master/target/tancify-0.1.0-SNAPSHOT.jar" | at now'
       }
     }
 
