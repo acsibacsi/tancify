@@ -2,9 +2,7 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      when {
-        branch 'master'
-      }
+      when { anyOf { branch 'master'; branch 'release' } }
       steps {
         sh 'mvn clean install'
       }
