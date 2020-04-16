@@ -32,12 +32,17 @@ Tanulás segítő webalkalmazas, ami a tárgyak elvégzesét segíti, a tananyag
 
 ## Nem funkcionális követelmények
 
-* használhatóság
-* megbizhatóság
+* használhatóság (Felhasználóbarát, ergonomikus elrendezés és kinézet)
+* megbizhatóság (Biztonságos működés: jelszavak tárolása, funkciókhoz való hozzáférés.)
 * hordozhatóság
 * hatékonyság
 
-## Adatbazis
+
+## Szakterületi fogalomjegyzék:
+
+(azon fogalmak definiálása, ami köré az alkalmazás épül)
+
+## Adatbázis
 
 <h2 align="center">
 <img src="img/database_uml.png" alt="database_uml" width="661">
@@ -49,57 +54,37 @@ Tanulás segítő webalkalmazas, ami a tárgyak elvégzesét segíti, a tananyag
 <img src="img/login_sequence.PNG" alt="login_sequence" width="664">
 </h2>
 
-## Vegpont tervek 
+## Szerepkörök
+
+* vendég: hozzáfér a tantárgyakhoz és az azokban található leckékhez, megnézheti a bennük szereplő tanulókártyákat
+* felhasználó: a vendég szerepkörén túl új tantárgyakat hozhat létre, új kérdéseket adhat hozzá egy tantárgyhoz
+              (/leckéhez), továbbá használhatja az órarend funkciót, amelyben a tantárgyai, és számonkéréseinek 
+              időpontja található, és tárgyanként egy optimális tanulási tervet
+* operátor:  a felhasználó szerepkörén túl törölhet tantárgyat vagy kérdést is
+
+## Végpont tervek 
 
 <h2 align="center">
 <img src="img/endpoints.png" alt="login_sequence" width="664">
 </h2>
 
-    GET tancify: querying tancify (you can sign in here and click on registration)
-    GET tancify/registration: querying registration (yuo need to add your: name, user_name, email, password) 
-
-    GET tancify/my_subjects: querying all_subjects
-    GET tancify/my_subjects/history: querying an element (a subject) with history identifier from model my_subjects
-    GET tancify/my_subjects/history/lesson_1: querying an element (a lesson) with lesson_1 identifier from model 
-        lessons of history subject
-    GET tancify/my_subjects/history/test_1: querying an element (a lesson) with test_1 identifier from model
-        lessons of history subject
-    GET tancify/my_subjects/history/all_lessons_questions: querying an element with all_lessons_questions identifier
-         from model lessons of history subject
-    GET tancify/my_subjects/history/all_tests_questions: querying an element with all_tests_questions identifier
-        from model lessons of history subject
-    POST tancify/my_subject: Inserting new element (new lesson or test) into my_subjects model
-    PUT tancify/my_subjects/history: Updating element with history identifier in model my_subjects
-    PATCH tancify/my_subjects/history: Partially updating element with history identifier in model my_subjects 
-        (e.g add new question-answer to flashcards or tests)
-    PATCH tancify/my_subjects/history/lesson_1: Partially updating element with lesson_1 identifier in model
-         my_subjects (e.g add new question-answer to flashcards of lesson_1)
-    DELETE tancify/all_subjects/history: Deleting element with history identifier from model people
-
-    GET tancify/all_subjects: querying all_subjects
-    GET tancify/all_subjects/history: querying an element (a subject) with history identifier from model 
-        all_subjects
-	GET tancify/all_subjects/history/lesson_1: querying an element (a lesson) with lesson_1 identifier from model
-        lessons of history subject
-    GET tancify/all_subjects/history/test_1: querying an element (a lesson) with test_1 identifier from model 
-        lessons of history subject
-    GET tancify/all_subjects/history/all_lessons_questions: querying an element with all_lessons_questions 
-        identifier from model lessons of history subject
-    GET tancify/all_subjects/history/all_tests_questions: querying an element with all_tests_questions identifier 
-        from model lessons of history subject
-    POST tancify/all_subjects: Inserting new element into all_subjects model
-    PUT tancify/all_subjects/history: Updating element with history identifier in model all_subjects
-    PATCH tancify/all_subjects/history: Partially updating element with history identifier in model all_subjects
-         (e.g add new lesson or test)
-	POST tancify/all_subjects/history/lesson_1: Inserting new element into history model
-    PUT tancify/all_subjects/history/lesson_1: Updating element with lesson_1 identifier in model history
-    PATCH tancify/all_subjects/history/lesson_1: Partially updating element with lesson_1 identifier in model
-        history (e.g add new question-answer to flashcards or tests)
-    DELETE tancify/all_subjects/history: Deleting element with history identifier from model /all_subjects
-
-    GET tancify/timetable: querying timetable
-    GET tancify/timetable/history: querying an element (a subject) with history identifier from model all_subjects
-    POST tancify/timetable: Inserting new element into timetable model
-    PUT tancify/timetable/history: Updating element with history identifier in model timetable
-    PATCH tancify/timetable/history: Partially updating element with history identifier in model timetable
-    DELETE tancify/timetable/history: Deleting element with history identifier from model timetable
+    
+    POST /login : email és jelszó megadása után be tud lépni a felhasználó
+    POST /register : név, email, jelszó megadásával lehet regisztrálni
+    GET /generate_lessons{test_id} : generál egy optimális időbeosztást tárgyanként a felhasználónak
+    GET /list_lessons{test_id} : kilistázza a felhasználó egy tárgyához tartozó leckéket
+    POST /modify_lessons : leckék módosítása
+    GET /show_lesson{lesson_id} : leckéhez tartózó "flashcard"-ok megjelenítése
+    POST /check_lesson : leckéhez tartozó tesztre adott válaszok ellenörzése, egy rossz válasz esetén, újra kell 
+                          próbálkozni a teszt kitöltésével, hibátlan teszt esetén elvégzett leckének  
+    GET /user_subjects : megjeleníti a felhasználóhoz tartozó tantárgyakat
+    GET /all_subjects : megjeleníti az összes tantárgyat 
+    POST /add_subject : új tantárgy létrehozása
+    POST /modifysubject : tantárgy módosítása
+    GET /query_subject{subject_id} : tantárgy megjelenítése
+    GET /lesson_for_subject{subject_id} : visszatér a tantárgyakhoz tartozó leckékkel
+    POST /sign_subject : felhasználó felveszi a tantárgyai közé az adott tárgyat
+    POST /add_flashcard : új tanulókártya létrehozása
+    POST /modify_flaschcards{subject_id} : tanulókártya módosítása
+    GET /query_flashcard{falshcard_id} : tanulókártya megjelenítése
+    GET /query_flashcards_for_subject{subject_id} : megjeleníti az összes "flashcard"-ot ami az adott tárgyhoz tartozik 
