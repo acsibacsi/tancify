@@ -3,6 +3,3 @@ run_server:
 
 run_test:
 	mvn test
-
-install:
-	mvn clean install
