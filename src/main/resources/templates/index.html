@@ -25,10 +25,10 @@
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
             <div class="sidebar-heading">Tancify</div>
-            <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item list-group-item-action bg-light">Tantárgyaim</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Összes tantárgy</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Órarend</a>
+            <div class="list-group list-group-flush nav nav-tabs nav-fill" role="tablist">
+                <a href="#my-subjects" id="nav-my-subjects-tab" data-toggle="tab" role="tab" aria-controls="nav-my-subjects" aria-selected="true" class="list-group-item list-group-item-action bg-light nav-item nav-link active">Tantárgyaim</a>
+                <a href="#all-subjects" id="nav-all-subjects-tab" data-toggle="tab" role="tab" aria-controls="nav-all-subjects" aria-selected="false" class="list-group-item list-group-item-action bg-light nav-item nav-link">Összes tantárgy</a>
+                <a href="#timetable" id="nav-timetable-tab" data-toggle="tab" role="tab" aria-controls="nav-timetable" aria-selected="false" class="list-group-item list-group-item-action bg-light nav-item nav-link">Órarend</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -46,18 +46,38 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Bejelentkezés <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Regisztracio <span class="sr-only">(current)</span></a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Bejelentkezés <span class="sr-only">(current)</span></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <form class="px-4 py-3">
+                                    <div class="form-group">
+                                        <label for="dropdownemail">Email cím</label>
+                                        <input type="email" class="form-control" id="dropdownemail" placeholder="email@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropdownpasswd">Jelszó</label>
+                                        <input type="password" class="form-control" id="dropdownpasswd" placeholder="Password">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Bejelentkezés</button>
+                                </form>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Még nem regisztráltál? Regisztráció</a>
+                                <a class="dropdown-item" href="#">Elfelejtett Jelszó</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
             </nav>
 
-            <div class="container-fluid">
-                <h1 class="mt-4">Tancify</h1>
-                <p>Tanulas segito webalkalmazas, ami a targyak elvegzeset segiti, a tananyag beosztasaval, flashcardokkal valo elsajatitasaval es allando szamonkeresekkel. Heti osszesiteseket kuld, amivel emlekezteti a regisztralt felhasznalot elorehaladasarol.</p>
+            <div class="container-fluid tab-content py-3 px-3 px-sm-0">
+                <div class="tab-pane fade show active" id="nav-my-subjects" role="tabpanel" aria-labelledby="nav-my-subjects-tab">
+                    Tantárgyaim
+                </div>
+                <div class="tab-pane fade" id="nav-all-subjects" role="tabpanel" aria-labelledby="nav-all-subjects-tab">
+                    Osszes Tantargy
+                </div>
+                <div class="tab-pane fade" id="nav-timetable" role="tabpanel" aria-labelledby="nav-timetable-tab">
+                    Orarend
+                </div>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
@@ -67,7 +87,7 @@
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Menu Toggle Script -->
     <script>
