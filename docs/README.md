@@ -38,10 +38,6 @@ Tanulás segítő webalkalmazas, ami a tárgyak elvégzesét segíti, a tananyag
 * hatékonyság
 
 
-## Szakterületi fogalomjegyzék:
-
-(azon fogalmak definiálása, ami köré az alkalmazás épül)
-
 ## Adatbázis
 
 <h2 align="center">
@@ -61,6 +57,12 @@ Tanulás segítő webalkalmazas, ami a tárgyak elvégzesét segíti, a tananyag
               (/leckéhez), továbbá használhatja az órarend funkciót, amelyben a tantárgyai, és számonkéréseinek 
               időpontja található, és tárgyanként egy optimális tanulási tervet
 * operátor:  a felhasználó szerepkörén túl törölhet tantárgyat vagy kérdést is
+
+## Táblák
+
+* Felhasználók táblája
+* Tantárgyak táblája
+* Naptár táblája
 
 ## Végpont tervek 
 
@@ -88,3 +90,52 @@ Tanulás segítő webalkalmazas, ami a tárgyak elvégzesét segíti, a tananyag
     POST /modify_flaschcards{subject_id} : tanulókártya módosítása
     GET /query_flashcard{falshcard_id} : tanulókártya megjelenítése
     GET /query_flashcards_for_subject{subject_id} : megjeleníti az összes "flashcard"-ot ami az adott tárgyhoz tartozik 
+
+
+## Fejlesztői környezet, használt technológiák
+
+* Visual Studio Code, IntelliJ IDEA 2020.01
+* HTTP, JSON, REST API (Spring boot, Issue tracker)
+* HTML, CCS, Typescript, git, Angular
+
+## Alkalmazott könyvtárstruktúra
+
+* tancify 
+    * hu
+        * elte
+            * tancify
+                * contorller
+                    * TancifyController.java
+                    * TimeTableController.java
+                    * UserController.java
+                * model
+                    * BaseEntity.java
+                    * Event.java
+                    * Flashcard.java
+                    * Learn.java
+                    * Lesson.java
+                    * Subject.java
+                    * Test.java
+                    * User.java
+                * repository
+                    * EventRepository.java
+                    * FlashRepository.java
+                    * LearnRepository.java
+                    * LessonRepository.java
+                    * SubjectRepository.java
+                    * TestRepository.java
+                    * UserRepository.java
+                * services
+                    * AuthenticatedUser.java
+                    * FlashcardService.java
+                    * LeranService.java
+                    * LessonService.java
+                    * MyUserDetailsService.java
+                    * SubjectService.java
+                    * TestService.java
+                    * UserService.java
+                * TancifyApplication.java
+                * WebSecurityConfig.java
+    * resources
+        * application.properties
+        * import.sql
