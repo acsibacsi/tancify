@@ -1,4 +1,4 @@
-package hu.elte.tancify;
+package hu.elte.tancify.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

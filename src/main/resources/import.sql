@@ -6,3 +6,8 @@ insert into user (email, name, username, password) values ('kiss.arpad@valami.co
 insert into subject (name, owner_id, public) values ('Analízis1', '1', true);
 insert into subject (name, owner_id, public) values ('Analízis2', '2', false);
 insert into subject (name, owner_id, public) values ('Analízis3', '3', false);
+
+insert into resource (name) values ('Resource 1');
+insert into resource (name) values ('Resource 2');
+insert into resource (name) values ('Resource 3');
+insert into resource (name) values ('Resource 4');
